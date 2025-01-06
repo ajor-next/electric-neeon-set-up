@@ -1,11 +1,17 @@
 import express from 'express';
 import pkg from 'pg';
+import cors from 'cors';
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Parse JSON bodies for this app
 app.use(express.json());
+
+app.use(cors({
+    origin: 'http://localhost:5173', // Allow this specific origin
+}));
+  
 
 // Create a new pool using your Neon database connection string
 const { Pool } = pkg;
