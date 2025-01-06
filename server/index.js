@@ -9,9 +9,15 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Allow this specific origin
+    origin: 'http://localhost:5173',
+    allowedHeaders: [
+      'Content-Type',
+      'Authorization',
+      'electric-offset',
+      'electric-handle',
+      'electric-schema',
+    ],
 }));
-  
 
 // Create a new pool using your Neon database connection string
 const { Pool } = pkg;

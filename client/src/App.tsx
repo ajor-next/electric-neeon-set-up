@@ -9,7 +9,7 @@ type BookToRead = {
 function App() {
   // Fetching books data from the ElectricSQL shape
   const { data: books } = useShape<BookToRead>({
-    url: `${import.meta.env.VITE_ELECTRIC_URL}/v1/shape/`,
+    url: `${import.meta.env.VITE_ELECTRIC_URL}`,
     params: {
       table: "books_to_read", // Correct table name
     },
